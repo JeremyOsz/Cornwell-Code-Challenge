@@ -27,6 +27,7 @@ const options = {
     fullscreenControl: false
 };
 
+// Set initialLocation
 const initialLocation = {
     lat: -37.8113046,
     lng: 144.9689237
