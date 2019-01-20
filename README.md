@@ -6,7 +6,7 @@ It will show the location of Godspeed, a denim store in Melbourne, Australia and
 
 NOTE: Due to Instagram API permissions this app is currently showing my personal Instagram
 
-_Live version is available at https://adoring-meninsky-783887.netlify.com/_
+\_Live version is available at https://infallible-clarke-0ebc98.netlify.com/
 
 ## Content Attribution
 

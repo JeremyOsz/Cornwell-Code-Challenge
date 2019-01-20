@@ -3,8 +3,6 @@ import InstaFeedWrapper from "./InstaFeedWrapper";
 import InstaPost from "./InstaPost";
 import FollowButton from "../FollowButton/FollowButton";
 
-const API_KEY = process.env.APIKEY_Instagram;
-
 export class InstagramContainer extends Component {
     state = {
         images: [],
@@ -12,7 +10,10 @@ export class InstagramContainer extends Component {
     };
 
     componentWillMount() {
-        const { count } = this.props;
+        const { count } = this.props; // Get specified amount of images
+        const API_KEY = process.env.APIKEY_Instagram; // Get API Key from env variables
+
+        // Fetch from Instagram using API key and Count
         fetch(
             `https://api.instagram.com/v1/users/self/media/recent/?access_token=${API_KEY}&count=${count}`
         )
