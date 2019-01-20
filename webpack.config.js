@@ -11,7 +11,7 @@ module.exports = {
     entry: { main: "./src/index.jsx" },
     output: {
         path: path.resolve(__dirname, "dist"),
-        filename: "[name].[chunkhash].js"
+        filename: "[name].[hash].js"
     },
     devServer: {
         contentBase: path.join(__dirname, "dist"),

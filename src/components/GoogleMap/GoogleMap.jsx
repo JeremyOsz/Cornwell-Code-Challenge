@@ -1,13 +1,10 @@
 import React, { Component } from "react";
 
 // Import Google Map elements
-import {
-    Map,
-    GoogleApiWrapper,
-    InfoWindow,
-    Marker,
-    Polygon
-} from "google-maps-react";
+import { Map, GoogleApiWrapper, Marker, Polygon } from "google-maps-react";
+
+// Import mapWrapper
+import MapWrapper from "./MapWrapper";
 
 // Set Default Map Styling
 const mapStyles = {
@@ -17,17 +14,6 @@ const mapStyles = {
     margin: "auto"
 };
 
-// Remove controls
-const options = {
-    zoomControl: false,
-    mapTypeControl: false,
-    scaleControl: false,
-    streetViewControl: false,
-    rotateControl: false,
-    fullscreenControl: false
-};
-
-// Set initialLocation
 const initialLocation = {
     lat: -37.8113046,
     lng: 144.9689237
@@ -45,45 +31,43 @@ const polyCoords = [
 const styles = require("./GoogleMapStyles.json");
 const logo = require("../../icons/GodspeedLogo.png");
 
-export class MapContainer extends Component {
-    render() {
-        return (
-            <div className="mapWrapper">
-                <Map
-                    google={this.props.google}
-                    zoom={18}
-                    style={mapStyles}
-                    styles={styles}
-                    initialCenter={initialLocation}
-                    zoomControl={false}
-                    mapTypeControl={false}
-                    scaleControl={false}
-                    streetViewControl={false}
-                    rotateControl={false}
-                    fullscreenControl={false}
-                >
-                    <Marker
-                        name="Godspeed"
-                        icon={{
-                            url: logo,
-                            anchor: new google.maps.Point(15, 15),
-                            scaledSize: new google.maps.Size(32, 32)
-                        }}
-                    />
-                    <Polygon
-                        className="Polygon"
-                        paths={polyCoords}
-                        strokeColor="#fff"
-                        strokeOpacity={0.8}
-                        strokeWeight={2}
-                        fillColor="#fddb00"
-                        fillOpacity={0.75}
-                    />
-                </Map>
-            </div>
-        );
-    }
-}
+const MapContainer = ({ google }) => {
+    return (
+        <MapWrapper>
+            <Map
+                google={google}
+                zoom={18}
+                style={mapStyles}
+                styles={styles}
+                initialCenter={initialLocation}
+                zoomControl={false}
+                mapTypeControl={false}
+                scaleControl={false}
+                streetViewControl={false}
+                rotateControl={false}
+                fullscreenControl={false}
+            >
+                <Marker
+                    name="Godspeed"
+                    icon={{
+                        url: logo,
+                        anchor: new google.maps.Point(15, 15),
+                        scaledSize: new google.maps.Size(32, 32)
+                    }}
+                />
+                <Polygon
+                    className="Polygon"
+                    paths={polyCoords}
+                    strokeColor="#fff"
+                    strokeOpacity={0.8}
+                    strokeWeight={2}
+                    fillColor="#fddb00"
+                    fillOpacity={0.75}
+                />
+            </Map>
+        </MapWrapper>
+    );
+};
 
 export default GoogleApiWrapper({
     apiKey: process.env.APIKEY_Google

@@ -3,10 +3,12 @@ import React, { Component } from "react";
 const API_KEY = process.env.APIKEY_Instagram;
 const count = 3;
 
-export class MapContainer extends Component {
+export class InstagramContainer extends Component {
     constructor(props) {
         super(props);
-        this.state = {};
+        this.state = {
+            images: []
+        };
     }
 
     componentWillMount() {
@@ -15,15 +17,28 @@ export class MapContainer extends Component {
         )
             .then(response => response.json())
             .then(myJSON => {
-                this.state = myJSON;
-                console.log(this.state);
+                this.setState({ images: myJSON.data });
             })
             .catch(e => console.log(e));
     }
 
     render() {
-        return <div />;
+        // console.log(this.state);
+        const { images } = this.state;
+        return (
+            <div key={images}>
+                {images.map(img => {
+                    return (
+                        <img
+                            src={img.images.standard_resolution.url}
+                            alt={img.caption.text}
+                        />
+                    );
+                })}
+                <h1>Goodbye world</h1>
+            </div>
+        );
     }
 }
 
-export default MapContainer;
+export default InstagramContainer;
