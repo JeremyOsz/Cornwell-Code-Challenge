@@ -8,7 +8,7 @@ import MapWrapper from "./MapWrapper";
 
 // Set Default Map Styling
 const mapStyles = {
-    width: "50%",
+    width: "890px",
     height: "60VH",
     position: "relative",
     margin: "auto"
@@ -35,6 +35,7 @@ const MapContainer = ({ google }) => {
     return (
         <MapWrapper>
             <Map
+                className="googleMap"
                 google={google}
                 zoom={18}
                 style={mapStyles}

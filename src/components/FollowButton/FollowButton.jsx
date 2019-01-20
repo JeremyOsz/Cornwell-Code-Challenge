@@ -1,8 +1,6 @@
 import React from "react";
 import styled from "styled-components";
 
-import background from "./background.svg";
-
 const AngleButton = styled.a`
     position: absolute;
     top: 0;
@@ -35,7 +33,7 @@ const AngleButton = styled.a`
         top: 11px;
         bottom: 0;
         left: 0;
-        right: 12%;
+        right: 1%;
         margin: auto;
         display: inline-block;
         height: fit-content;

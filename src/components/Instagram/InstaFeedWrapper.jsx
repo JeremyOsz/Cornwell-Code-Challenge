@@ -23,6 +23,25 @@ export default styled.div`
     }
     img {
         width: 100%;
+        height: auto;
         object-fit: cover;
+    }
+    a.instaLink {
+        display: inline-block;
+        position: relative;
+        padding: 0;
+        margin: 0;
+        height: auto;
+        width: 100%;
+        line-height: 0;
+    }
+
+    @media (max-width: 790px) {
+        display: block;
+        & > div {
+            max-width: 100%;
+            max-height: 50em;
+            height: auto;
+        }
     }
 `;

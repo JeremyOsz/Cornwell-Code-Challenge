@@ -6,4 +6,9 @@ export default styled.div`
         min-height: 60vh;
         height: auto !important;
     }
+    @media (max-width: 890px) {
+        & > div > div {
+            width: 100% !important;
+        }
+    }
 `;
