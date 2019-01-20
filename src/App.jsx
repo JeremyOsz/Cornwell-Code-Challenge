@@ -7,7 +7,7 @@ const App = () => (
     <div>
         <PageHeader>About us</PageHeader>
         <GoogleMap />
-        <Insta />
+        <Insta count={3} />
     </div>
 );
 

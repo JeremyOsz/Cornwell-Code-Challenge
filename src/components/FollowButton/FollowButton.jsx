@@ -44,7 +44,6 @@ const AngleButton = styled.a`
         position: absolute;
         right: 1.5em;
         bottom: 0.5em;
-        /* top: 0; */
         transform: skewY(4deg);
         margin: auto;
     }
@@ -52,11 +51,7 @@ const AngleButton = styled.a`
 
 const FollowButton = ({ link, text }) => (
     <AngleButton href={link}>
-        <p>{text} </p>
-        <img
-            src="https://image.freepik.com/free-icon/right-arrow-of-straight-lines_318-70901.jpg"
-            alt="arrow"
-        />
+        <p>{text} → </p>
     </AngleButton>
 );
 

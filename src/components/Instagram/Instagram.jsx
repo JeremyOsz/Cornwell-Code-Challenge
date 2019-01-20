@@ -4,18 +4,15 @@ import InstaPost from "./InstaPost";
 import FollowButton from "../FollowButton/FollowButton";
 
 const API_KEY = process.env.APIKEY_Instagram;
-const count = 3;
 
 export class InstagramContainer extends Component {
-    constructor(props) {
-        super(props);
-        this.state = {
-            images: [],
-            link: "https://www.instagram.com/jeremyosz/"
-        };
-    }
+    state = {
+        images: [],
+        link: "https://www.instagram.com/jeremyosz/"
+    };
 
     componentWillMount() {
+        const { count } = this.props;
         fetch(
             `https://api.instagram.com/v1/users/self/media/recent/?access_token=${API_KEY}&count=${count}`
         )
@@ -27,7 +24,6 @@ export class InstagramContainer extends Component {
     }
 
     render() {
-        // console.log(this.state);
         const { images, link } = this.state;
         return (
             <InstaFeedWrapper key={images}>
