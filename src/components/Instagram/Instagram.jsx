@@ -1,4 +1,7 @@
 import React, { Component } from "react";
+import InstaFeedWrapper from "./InstaFeedWrapper";
+import InstaPost from "./InstaPost";
+import FollowButton from "../FollowButton/FollowButton";
 
 const API_KEY = process.env.APIKEY_Instagram;
 const count = 3;
@@ -7,7 +10,8 @@ export class InstagramContainer extends Component {
     constructor(props) {
         super(props);
         this.state = {
-            images: []
+            images: [],
+            link: "https://www.instagram.com/jeremyosz/"
         };
     }
 
@@ -24,19 +28,19 @@ export class InstagramContainer extends Component {
 
     render() {
         // console.log(this.state);
-        const { images } = this.state;
+        const { images, link } = this.state;
         return (
-            <div key={images}>
-                {images.map(img => {
-                    return (
-                        <img
-                            src={img.images.standard_resolution.url}
-                            alt={img.caption.text}
-                        />
-                    );
-                })}
-                <h1>Goodbye world</h1>
-            </div>
+            <InstaFeedWrapper key={images}>
+                {images.map(img => (
+                    <InstaPost
+                        src={img.images.standard_resolution.url}
+                        alt={img.caption.text}
+                        link={img.link}
+                        key={img.id}
+                    />
+                ))}
+                <FollowButton link={link} text="Follow Us" />
+            </InstaFeedWrapper>
         );
     }
 }

@@ -1,4 +1,4 @@
-import React, { Component } from "react";
+import React from "react";
 
 // Import Google Map elements
 import { Map, GoogleApiWrapper, Marker, Polygon } from "google-maps-react";
@@ -9,7 +9,7 @@ import MapWrapper from "./MapWrapper";
 // Set Default Map Styling
 const mapStyles = {
     width: "50%",
-    height: "60%",
+    height: "60VH",
     position: "relative",
     margin: "auto"
 };
