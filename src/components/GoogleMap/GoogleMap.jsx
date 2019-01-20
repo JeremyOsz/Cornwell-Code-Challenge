@@ -8,7 +8,7 @@ import MapWrapper from "./MapWrapper";
 
 // Set Default Map Styling
 const mapStyles = {
-    width: "890px",
+    width: "990px",
     height: "60VH",
     position: "relative",
     margin: "auto"
