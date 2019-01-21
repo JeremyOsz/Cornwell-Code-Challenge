@@ -1,6 +1,6 @@
 # Cornwell-Code-Challenge
 
-This is a code challenge for Cromwell (https://www.cornwell.com.au/)
+This is a code challenge for Cornwell (https://www.cornwell.com.au/)
 
 It will show the location of Godspeed, a denim store in Melbourne, Australia and fetch their latest 3 instagram posts.
 
